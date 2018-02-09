@@ -1,0 +1,36 @@
+[?2/?9/?2018 12:47 PM] FIXED-TERM Mukund Ajmera (RBEI/BSJ): 
+hello 
+Good afternoon 
+[?2/?9/?2018 12:47 PM] Karthika Santhosh (RBEI/BSW4): 
+Hello Mukund
+good afternoon
+[?2/?9/?2018 12:48 PM] FIXED-TERM Mukund Ajmera (RBEI/BSJ): 
+i am intern mukund joined last month just pinged for 
+synopsis (for college project) 
+[?2/?9/?2018 12:49 PM] Karthika Santhosh (RBEI/BSW4): 
+yes i do remember u
+u need synopsis on docviewer
+[?2/?9/?2018 12:49 PM] FIXED-TERM Mukund Ajmera (RBEI/BSJ): 
+i didn
+[?2/?9/?2018 12:50 PM] FIXED-TERM Mukund Ajmera (RBEI/BSJ): 
+i didn't understand on docviewer 
+[?2/?9/?2018 12:50 PM] Karthika Santhosh (RBEI/BSW4): 
+i mean u need synopsis for the project which u r doing intership
+[?2/?9/?2018 12:50 PM] FIXED-TERM Mukund Ajmera (RBEI/BSJ): 
+yes 
+[?2/?9/?2018 12:50 PM] FIXED-TERM Mukund Ajmera (RBEI/BSJ): 
+ya
+[?2/?9/?2018 12:51 PM] Karthika Santhosh (RBEI/BSW4): 
+ok and the project which ur working on is called inside.ILM and its knows as DocViewer
+[?2/?9/?2018 12:52 PM] FIXED-TERM Mukund Ajmera (RBEI/BSJ): 
+ok
+[?2/?9/?2018 12:52 PM] FIXED-TERM Mukund Ajmera (RBEI/BSJ): 
+so how should we proceed for it
+[?2/?9/?2018 1:01 PM] Karthika Santhosh (RBEI/BSW4): 
+DocViewer - Build on SAP KMC 7.02
+Tech : EXTJS, Spring, Java and SAP 7.02 APIs
+[?2/?9/?2018 1:03 PM] Karthika Santhosh (RBEI/BSW4): 
+DMS 
+aim : efficient usage and maintenance of documents 
+[?2/?9/?2018 1:13 PM] FIXED-TERM Mukund Ajmera (RBEI/BSJ): 
+Ponvannan Ponnuramu (RBEI/BSW5) <Ponvannan.Ponnuramu@in.bosch.com> 
