@@ -1,0 +1,258 @@
+/**
+* DOCUMENTATION FOR MONGO DB BASIC COMMANDS
+* 
+*CONTENT:-
+*1. managing db and collections
+*2. inserting records
+*3. select
+*4. update
+*5. sorting
+*6. Deleting
+*7. User creation
+*8. Indexing
+*9. function small example
+**/
+
+senario
+student records management 
+database name:- student
+	-> collection name:- info
+		-> attributes -- name
+						 age
+						 gender
+						 subject
+						 marks
+#1. managing db and collections
+
+
+//show database (will list all the database with their respective size)
+show dbs
+
+//create database or switch to database
+use student
+
+//list collections in database currectly using
+show collections
+
+
+#2. inserting in collection
+Note:- As collection may not be explicitly created on activity related to it.
+
+//using collection name "info"
+
+//inserting one record
+db.info.insert({name:"Mukund",age:22,gender:"Male",sub:"accounts",marks:70});
+
+
+//to check or display the data in info 
+db.info.find();
+
+
+//inserting multiple records
+db.info.insert([{name:"Navneet",age:23,gender:"Male",sub:"maths",marks:78},{name:"Sudindra",age:24,gender:"Male",sub:"accounts",marks:80},{name:"Sindhu",age:23,gender:"Female",sub:"IT",marks:80}]);
+
+
+//to check or display the data in info 
+db.info.find();
+
+senario 1:- if we want to insert multiple subjects embbded in "sub"
+
+db.info.insert({name:"Irfan",age:26,gender:"Male",sub:{
+sub1:"Maths",
+mark1:80,
+sub2:"English",
+mark2:70,
+}});
+
+senario 2:- if we want to add array of things together support student have language
+
+db.info.insert({name:"Aditi",age:23,gender:"Female",language:[
+"Hindi","English","Kannada"
+]});
+
+
+//merging both senario can also be done
+
+
+db.info.insert({name:"Vara",age:21,gender:"Female",sub:{
+sub1:"Maths",
+mark1:80,
+sub2:"English",
+mark2:70,
+},
+language:["English","Kannada"]});
+
+//mixing them is also possbile but not listed here
+
+
+
+#3. selection or viewing
+
+//view all records by default limit is 20 
+db.info.find();
+
+//making output more easy to readable 
+db.info.find().pretty();
+
+//listing number of tuples
+db.info.find().count();
+
+
+//finding the specific records by name
+db.info.find({name:"Mukund"}).pretty();
+
+//finding the specific records with multiple arguments
+
+db.info.find({$or:[{name:"Mukund"},{name:"Navneet"}]}).pretty();
+
+//finding the specific records with multiple arguments using "$in"
+
+db.info.find({name:{$in:["Mukund", "Navneet" ]}}).pretty();
+//use of greater than 
+
+db.info.find({age:{$gt:23}}).pretty();
+
+//use of less then "$lt"
+
+db.info.find({marks:{$lt:75}}).pretty();
+
+//finding the specific records with multiple arguments 
+
+db.info.find({$or:[{sub:{$gt:70}},{age:{$lt:24}}]}).pretty();
+
+//use of AND condition for 2 condtions 
+db.info.find({gender: "Male", age:{$gt:23}})
+
+
+#4.update document
+
+//lets insert one wrong record and change it with correct values
+
+db.info.insert({name:"blah",age:50,gender:"Tail",sub:"No_sub"})
+	//show values
+	db.info.find({name:"blah"}).pretty()
+
+//updating name for the record using "$set" to only change or add 
+//perticular column
+
+db.info.update({name:"blah"},{$set:{name:"Jayant"}});
+
+	//show effect of above query
+	db.info.find({name:"Jayant"}).pretty()
+
+//updating record and adding new column with "$set"
+
+db.info.update({name:"Jayant"},{$set:{marks:80}});
+	
+	//show effect of above query
+	db.info.find({name:"Jayant"}).pretty()
+
+//incrementing marks using "$inc"
+
+db.info.update({name:"Jayant"},{$inc:{marks:2}});
+
+	//show effect of above query
+	db.info.find({name:"Jayant"}).pretty()
+
+//changing multiple values in one row 
+
+db.info.update({name:"Jayant"},{$set:{age:25,gender:"Male",sub:"Computer Science"}});
+
+	//show effect of above query
+	db.info.find({name:"Jayant"}).pretty()
+
+
+
+#5.sorting
+//sorting existing records asc "name"
+db.info.find().sort({name:1}).pretty()
+
+//sorting existing records desc "name"
+db.info.find().sort({name:-1}).pretty()
+
+	//with numberic values
+	//sorting existing records asc "age"
+
+	db.info.find().sort({age:1}).pretty()
+
+	//with numberic values
+	//sorting existing records desc "age"
+
+	db.info.find().sort({age:-1}).pretty()
+
+#6.deleting the records
+
+db.info.remove({name:"Jayant"});
+
+//show output
+db.info.find().pretty();
+
+#7.user adding
+
+//to login with the user in database 
+
+example user admin
+		pass admin
+	command:-	mongo -u admin -p 'admin'
+
+//adding roles generally for all databases
+db.createUser({
+	user: "user1",
+	pwd: "user1",
+	roles:["readWrite","dbAdmin"]
+})
+
+//adding roles for multiple databases multi db
+
+db.createUser({
+	user: "admin",
+	pwd: "admin",
+	roles:[
+	{role:"readWrite",
+	db:"employee"},
+	{role:"readWrite",
+	db:"student"}	]
+})
+
+//listing all the database users
+show users
+
+//list specific user role
+db.getUser("user_name")
+
+//roles listing
+read:Provides the ability to read data 
+readWrite:Provides all the privileges of the read role plus ability to modify data 
+dbAdmin:actions "    collStats    dbHash    dbStats    find    killCursors    listIndexe    listCollections    dropCollection and createCollection on system.profile only
+"
+
+dbOwner:The database owner can perform any administrative action on the database. This role combines the privileges granted by the readWrite, dbAdmin and userAdmin roles.
+
+ userAdmin:Provides the ability to create and modify roles and users for a database. A user with this role on a database can assign any role or privilege to any user for that database, including themselves.
+
+#8.indexing
+
+//listing existing index
+ db.info.getIndexes();
+
+
+//creating index on name field in asc 
+db.info.createIndex({ name: 1 })
+
+//remove index 
+db.info.dropIndex({name:1});
+	
+	//to check the effect of above query
+	 db.info.getIndexes();
+
+#9.using functions
+
+db.info.find().forEach(
+function(val){
+print("Name:"+val.name+"  Age:"+val.age+"  Subject:"+val.sub+"  Marks:"+val.marks);	
+})
+
+Status left:-
+//work for roles 
+//how to point from one doc to other if possible learn that and show
+//go through whole doc and set accordingly if any changes required
