@@ -1,0 +1,56 @@
+imp links:-
+https://www.dezyre.com/article/top-10-machine-learning-algorithms/202
+
+
+s:Linear Regression 
+i:Logistic Regression || irfan
+n:Multivariate Regression 
+
+m:Naive Bayes 
+s:K Means Clustering 
+n:Apriori 
+m:K-Nearest Neighbors
+i:Random Forests || irfan
+i:Decision Trees
+
+s:Support Vector Machines ||none
+n:Multiple Regression  ||none
+m:Lasso Regression|| none
+
+i:Learning Vector Quantization
+s:Bagged Decision Trees
+i:Boosting and AdaBoost
+n:Linear Discriminant Analysis
+m:Artificial Neural Networks
+s:C4.5
+i:EM(Expectation-Maximization)
+n:PageRank(PR)
+
+
+
+
+
+/////
+s:Linear Regression 
+s:K Means Clustering 
+s:Bagged Decision Trees
+s:C4.5
+s:Support Vector Machines 
+
+n:Multivariate Regression 
+n:PageRank(PR)
+n:Apriori 
+n:Multiple Regression  
+n:Linear Discriminant Analysis
+
+i:Learning Vector Quantization
+i:Boosting and AdaBoost
+i:Random Forests 
+i:Decision Trees
+i:Logistic Regression 
+
+m:Naive Bayes 
+m:K-Nearest Neighbors
+m:Lasso Regression|| none
+m:Artificial Neural Networks
+m:EM(Expectation-Maximization)
