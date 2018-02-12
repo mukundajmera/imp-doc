@@ -1,0 +1,44 @@
+naive bayes based on  Bayes Probability Theorem (conditional probability) for subjective analysis 
+documents:-
+one doc left
+
+applications :-
+Spam Filtering is a popular application of Naïve Bayes algorithm. Spam filter here, is a classifier that assigns a label “Spam” or “Not Spam” to all the emails.
+
+Sentiment Analysis- It is used at Facebook to analyse status updates expressing positive or negative emotions.
+
+Document Categorization- Google uses document classification to index documents and find relevancy scores i.e. the PageRank. 
+
+used for :-  models particularly for disease prediction and document classification. 
+
+used when:- 
+1:moderate or large training data set.
+2:several attributes
+3:classification parameter, attributes which describe the instances should be conditionally independent (independent is most impoartant part).
+
+
+adv:-
+1: works well when input variables are categorical
+2: converges faster, requiring relatively little training data (not like  logistic regression)
+3: good for multi classes also
+
+
+----------------------------------------------------------------------------------------------------------
+K-Nearest Neighbors 
+links:-
+https://machinelearningmastery.com/k-nearest-neighbors-for-machine-learning/
+
+
+used for :- KNN can be used for both classification and regression predictive problems. However, it is more widely used in classification problems in the industry. 
+
+Advc :-
+1:Ease to interpret output
+2:Calculation time
+3:Predictive Power
+
+
+to calculate distance :- Hamming Distance: Calculate the distance between binary vectors 
+Manhattan Distance(City Block Distance): Calculate the distance between real vectors using the sum of their absolute difference 
+Minkowski Distance: Generalization of Euclidean and Manhattan distance 
+Euclidean distance: distance between 2 point on graph.
+
